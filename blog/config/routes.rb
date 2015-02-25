@@ -1,12 +1,24 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'welcome/team'
+  get '/index' => 'welcome#index'
+  get '/team' => 'welcome#team'
+  get '/lobna' => 'welcome#lobna'
+  get '/farah' => 'welcome#farah'
+  get '/nirvana' => 'welcome#nirvana'
+  get '/nourhan' => 'welcome#nourhan'
+  get '/nihal' => 'welcome#nihal'
+  get '/ingy' => 'welcome#ingy'
 
+  resources :articles do
+  resources :comments
+end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :articles
-  root 'welcome#index'
+   root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
